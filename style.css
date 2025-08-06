@@ -5,6 +5,10 @@ body {
   background: #f8f9fa;
 }
 
+.some-block {
+  margin: 0 auto;
+}
+
 header {
   background: #343a40;
   color: white;
