@@ -9,7 +9,11 @@ header {
   background: #343a40;
   color: white;
   padding: 2em;
-  text-align: center;
+  text-align: center;   /* This centers all header content */
+}
+
+header h1, header h2 {
+  text-align: center;   /* This ensures the title is centered */
 }
 
 main {
