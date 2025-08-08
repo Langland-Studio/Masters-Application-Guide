@@ -10,10 +10,14 @@ body {
 }
 
 header {
-  background: #343a40;
-  color: white;
-  padding: 2em;
-  text-align: center;   /* This centers all header content */
+  background: #393e41;
+  color: #fff;
+  padding: 2.7rem 2.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* horizontal center */
+  justify-content: center; /* vertical center */
+  text-align: center;   /* center text */
 }
 
 header h1, header h2 {
