@@ -5,29 +5,43 @@ body {
   background: #f8f9fa;
 }
 
+/* Optional: center any block horizontally by using this */
 .some-block {
   margin: 0 auto;
 }
 
+/* Top header section */
 header {
   background: #393e41;
   color: #fff;
   padding: 2.7rem 2.5rem 2rem 2.5rem;
+
+  /* Flexbox centering */
   display: flex;
   flex-direction: column;
-  align-items: center;  /* horizontal center */
-  justify-content: center; /* vertical center */
-  text-align: center;   /* center text */
+  align-items: center;  /* center horizontally */
+  justify-content: center; /* center vertically if needed */
+  text-align: center;   /* center text inside */
 }
 
-header h1, header h2 {
-  text-align: center;   /* This ensures the title is centered */
+header h1, 
+header h2 {
+  text-align: center;   /* keep headings centered */
+  margin: 0;            /* remove default margins for tighter look */
 }
 
+header p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e0e0e0; /* light gray for subtitle */
+}
+
+/* Main page layout */
 main {
   padding: 2em;
 }
 
+/* Sections in the main content */
 section {
   margin-bottom: 1.5em;
   border-bottom: 1px solid #ccc;
@@ -37,13 +51,16 @@ section {
 h2 {
   cursor: pointer;
   color: #007bff;
+  margin-top: 0;
 }
 
+/* Collapsible content hidden by default */
 .content {
   display: none;
   margin-top: 0.5em;
 }
 
+/* Footer section */
 footer {
   text-align: center;
   padding: 1em;
