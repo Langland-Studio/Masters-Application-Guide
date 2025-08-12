@@ -18,7 +18,6 @@ header {
 }
 
 header h1, header h2 {
-  text-align: center;
   margin: 0;
 }
 
@@ -51,12 +50,10 @@ header p {
 .sidebar h1 {
   font-size: 1.35rem;
   margin-bottom: 2.5rem;
-  margin-top: 0;
   font-weight: 700;
   color: #4169e1;
 }
 
-/* Sidebar navigation for desktop */
 .sidebar-nav {
   display: flex;
   flex-direction: column;
