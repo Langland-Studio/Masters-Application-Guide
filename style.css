@@ -5,27 +5,19 @@ body {
   background: #f8f9fa;
 }
 
-/* Optional: center any block horizontally by using this */
-.some-block {
-  margin: 0 auto;
-}
-
 /* Top header section */
 header {
   background: #393e41;
   color: #fff;
   padding: 2.7rem 2.5rem 2rem 2.5rem;
-
-  /* Flexbox centering */
   display: flex;
   flex-direction: column;
-  align-items: center;  /* center horizontally */
-  justify-content: center; /* center vertically if needed */
-  text-align: center;   /* center text inside */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-header h1, 
-header h2 {
+header h1, header h2 {
   text-align: center;
   margin: 0;
 }
@@ -33,114 +25,61 @@ header h2 {
 header p {
   margin: 0;
   font-size: 1.1rem;
-  color: #e0e0e0; /* light gray for subtitle */
+  color: #e0e0e0;
 }
 
-/* Main page layout */
-main {
-  padding: 2em;
+.container {
+  display: flex;
+  min-height: 100vh;
 }
 
-/* Sections in the main content */
-section {
-  margin-bottom: 3em;
-  padding-bottom: 0;
-  border: none;
-}
-
-h2 {
-  cursor: pointer;
-  color: #007bff;
-  margin-top: 0;
-}
-
-/* Collapsible content hidden by default */
-.content {
-  display: none;
-  margin-top: 0.5em;
-}
-
-/* Footer section */
-footer {
-  text-align: center;
-  padding: 1em;
-  background: #e9ecef;
-  font-size: 0.9em;
-}
-
-/* Timeline container */
-.timeline-container {
-  display: inline-flex; /* shrink to match items */
+/* Sidebar for desktop */
+.sidebar {
+  width: 230px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  overflow-x: auto; /* allow scrolling if too wide */
-  padding: 2rem 0;
-  position: relative;
-  gap: 2rem; /* space between items */
-  scroll-snap-type: x mandatory; /* smooth snap on scroll (optional) */
 }
 
-.timeline-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.timeline-container::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-
-.timeline-container::before {
-  content: "";
-  position: absolute;
-  top: 60px;
-  left: 10px; /* align with first dot */
-  height: 4px;
-  background: #4169e1;
-  width: calc(100% - 20px); /* end near last dot */
-  z-index: 0;
-}
-
-.timeline-item {
-  flex: 0 0 200px; /* fixed item width */
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  scroll-snap-align: start;
-}
-
-.timeline-item::before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: #4169e1;
-  border-radius: 50%;
-  margin: 0 auto;
-  position: relative;
-  top: 50px;
-  z-index: 2;
-}
-
-.timeline-content {
-  background: #f5f6fb;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1rem;
-  margin-top: 80px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-}
-
-.timeline-content h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+.sidebar h1 {
+  font-size: 1.35rem;
+  margin-bottom: 2.5rem;
+  margin-top: 0;
+  font-weight: 700;
   color: #4169e1;
 }
 
-.timeline-content p {
-  margin: 0;
-  font-size: 0.95rem;
+/* Sidebar navigation for desktop */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
 }
 
-/* Hide hamburger by default */
+.sidebar-nav a {
+  color: #4169e1;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.2em 0.2em 0.2em 0;
+  border-radius: 4px;
+  transition: background 0.18s;
+}
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background: #f2f3ff;
+  color: #263238;
+}
+
+/* Hamburger menu: hidden on desktop */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -150,7 +89,158 @@ footer {
   color: #4169e1;
 }
 
-/* Mobile view */
+/* Main content */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.3rem 2.5rem 2.5rem 2.5rem;
+  background: none;
+}
+
+section {
+  margin-bottom: 2.7rem;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+h2 {
+  color: #4169e1;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+footer {
+  background: #e9eaec;
+  color: #222;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+/* -------- Vertical Timeline Styles -------- */
+.vertical-timeline {
+  position: relative;
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 600px;
+}
+
+.vertical-timeline::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #4169e1;
+  border-radius: 2px;
+}
+
+.vt-item {
+  position: relative;
+  margin-bottom: 3.5rem;
+  min-height: 50px;
+}
+
+.vt-item:last-child {
+  margin-bottom: 0;
+}
+
+.vt-item::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 0.4em;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 4px solid #4169e1;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.vt-content {
+  margin-left: 60px;
+  background: #f5f6fb;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.vt-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #4169e1;
+}
+
+.vt-content p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Mobile responsive: make timeline full width, shrink left margin */
+@media (max-width: 600px) {
+  .vertical-timeline {
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .vertical-timeline::before {
+    left: 18px;
+  }
+  .vt-content {
+    margin-left: 45px;
+    padding: 0.7rem 1rem;
+  }
+  .vt-item::before {
+    left: 10px;
+    width: 14px;
+    height: 14px;
+    border-width: 3px;
+  }
+}
+
+/* -------- Sidebar Responsive Styles -------- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 1rem 1rem 1rem;
+    gap: 2rem;
+  }
+  .sidebar h1 {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .main-content header, main {
+    padding: 1.2rem;
+  }
+}
+
+/* Hamburger only on mobile (<600px) */
 @media (max-width: 600px) {
   .sidebar {
     flex-direction: row;
@@ -158,17 +248,14 @@ footer {
     justify-content: space-between;
     padding: 0.8rem 1rem;
   }
-
   .sidebar h1 {
     font-size: 1.2rem;
     margin: 0;
   }
-
   /* Show hamburger icon */
   .menu-toggle {
     display: block;
   }
-
   /* Hide menu by default on mobile */
   .sidebar-nav {
     display: none;
@@ -184,12 +271,10 @@ footer {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 999;
   }
-
   /* Show menu when active */
   .sidebar-nav.active {
     display: flex;
   }
-
   .sidebar-nav a {
     padding: 0.6rem;
     font-size: 1rem;

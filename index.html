@@ -5,170 +5,13 @@
   <title>硕士申请全流程指南</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #f6f7f9;
-      font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-      color: #222;
-    }
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
-    .sidebar {
-      width: 230px;
-      background: #fff;
-      border-right: 1px solid #e0e0e0;
-      padding: 2.5rem 1.5rem 2rem 1.5rem;
-      box-sizing: border-box;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .sidebar h1 {
-      font-size: 1.35rem;
-      margin-bottom: 2.5rem;
-      margin-top: 0;
-      font-weight: 700;
-      color: #4169e1;
-    }
-
-    .sidebar-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-      width: 100%;
-    }
-
-    .sidebar-nav a {
-      color: #4169e1;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 0.2em 0.2em 0.2em 0;
-      border-radius: 4px;
-      transition: background 0.18s;
-    }
-    .sidebar-nav a:hover,
-    .sidebar-nav a.active {
-      background: #f2f3ff;
-      color: #263238;
-    }
-
-    .main-content {
-      flex: 1;
-      padding: 0 0 0 0;
-      min-width: 0;
-    }
-    header {
-      background: #393e41;
-      color: #fff;
-      padding: 2.7rem 2.5rem 2rem 2.5rem;
-    }
-
-    header h2 {
-      margin: 0 0 0.8rem 0;
-      font-size: 2.3rem;
-      font-weight: 700;
-    }
-    header p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #e0e0e0;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2.3rem 2.5rem 2.5rem 2.5rem;
-      background: none;
-    }
-    section {
-      margin-bottom: 2.7rem;
-      background: none;
-      border-radius: 0;
-      box-shadow: none;
-      padding: 0;
-    }
-    h2 {
-      color: #4169e1;
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-    footer {
-      background: #e9eaec;
-      color: #222;
-      text-align: center;
-      padding: 1.2rem 0;
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-    }
-    /* Collapsible (details/summary) styling */
-    details {
-      margin-top: 1.5em;
-      margin-bottom: 1em;
-      background: #f5f6fb;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      padding: 1rem 1.5rem 1.3rem 1.5rem;
-      cursor: pointer;
-    }
-    summary {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #4169e1;
-      cursor: pointer;
-      outline: none;
-    }
-    details[open] summary {
-      margin-bottom: 1rem;
-    }
-    /* Responsive */
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-        flex-direction: row;
-        align-items: center;
-        padding: 1rem 1rem 1rem 1rem;
-        gap: 2rem;
-      }
-      .sidebar h1 {
-        margin-bottom: 0;
-        margin-right: 2rem;
-      }
-      .sidebar-nav {
-        flex-direction: row;
-        gap: 2rem;
-      }
-      .main-content header, main {
-        padding: 1.2rem;
-      }
-    }
-    @media (max-width: 600px) {
-      main {
-        padding: 0.7rem;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="container">
     <nav class="sidebar">
       <h1>Langland留学</h1>
+      <!-- Hamburger menu button, only visible on mobile -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <div class="sidebar-nav">
         <a href="#xuanxiao">选校</a>
         <a href="#timeline">申请Timeline</a>
@@ -178,24 +21,6 @@
         <a href="#Langland">Langland Studio介绍</a>
       </div>
     </nav>
-
-<nav class="sidebar">
-  <h1>Langland留学</h1>
-
-  <!-- Hamburger menu button -->
-  <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-
-  <div class="sidebar-nav">
-    <a href="#xuanxiao">选校</a>
-    <a href="#timeline">申请Timeline</a>
-    <a href="#ps">PS文书</a>
-    <a href="#cv">CV</a>
-    <a href="#rp">RP</a>
-    <a href="#Langland">Langland Studio介绍</a>
-  </div>
-</nav>
-
-
     <div class="main-content">
       <header>
         <h2>硕士申请全流程指北</h2>
@@ -209,7 +34,6 @@
           <p>我们要为自己制定三类院校： 冲一冲， 稳一稳， 保一保！<br>
              首先要合理评估自己本科的院校背景，专业，均分，以及参与过的科研项目，实习等等 <br>
              在英国方向上G5+爱丁堡是社科类重点冲刺的院校，港三，新二也值得考虑</p>
-          
           <p>我们Langland工作室在申请语言学和心理学方向上自创立以来申请成功率为100%
           </p>
           <details>
@@ -219,58 +43,53 @@
                  style="max-width:100%; height:auto; display:block; margin:2rem auto;" />
           </details>
           <p>与Peter学长以及爱大牛剑在读/已毕业一对一交流，见“Langland Studio介绍“部分</p>
-</section>
-
-          <section id="timeline">
-  <h2>申请 Timeline</h2>
-  <div class="timeline-container">
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>📚 大二-大三</h3>
-        <p>逐步确定研究方向，增加课程和实习经历</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>📝 大三暑假</h3>
-        <p>确定选校和申请批次，考语言成绩（e.g. IELTS）</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>📄 8-10月</h3>
-        <p>准备申请材料：文书、CV、成绩单等</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>📬 9-11月</h3>
-        <p>第一轮投递</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>🎯 11-2月</h3>
-        <p>第二轮投递</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3>🎓 12月-大四下</h3>
-        <p>收offer</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+        </section>
+        <section id="timeline">
+          <h2>申请 Timeline</h2>
+          <div class="vertical-timeline">
+            <div class="vt-item">
+              <div class="vt-content">
+                <h3>📚 大二-大三</h3>
+                <p>逐步确定研究方向，增加课程和实习经历</p>
+              </div>
+            </div>
+            <div class="vt-item">
+              <div class="vt-content">
+                <h3>📝 大三暑假</h3>
+                <p>确定选校和申请批次，考语言成绩（e.g. IELTS）</p>
+              </div>
+            </div>
+            <div class="vt-item">
+              <div class="vt-content">
+                <h3>📄 8-10月</h3>
+                <p>准备申请材料：文书、CV、成绩单等</p>
+              </div>
+            </div>
+            <div class="vt-item">
+              <div class="vt-content">
+                <h3>📬 9-11月</h3>
+                <p>第一轮投递</p>
+              </div>
+            </div>
+            <div class="vt-item">
+              <div class="vt-content">
+                <h3>🎯 11-2月</h3>
+                <p>第二轮投递</p>
+              </div>
+            </div>
+            <div class="vt-item">
+              <div class="vt-content">
+                <h3>🎓 12月-大四下</h3>
+                <p>收offer</p>
+              </div>
+            </div>
+          </div>
         </section>
         <section id="ps">
           <h2>PS文书</h2>
           <p>对于social science and psychology来说，文书就是申请最关键的一环</p>
           <p>当申请者们的本科院校和均分不相上下时，文书质量就成了决定是否录取的最重要标准</p>
           <p>我们建议有能力的同学一定要自己写文书或者至少自己和老师一起总结文书素材</p>
-        
         </section>
         <section id="cv">
           <h2>CV</h2>
@@ -281,17 +100,16 @@
           <p>Research Proposal 对于申请研究型硕士和博士来说很关键，但授课型硕士不需要</p>
           <p>牛剑申请需要writing sample</p>
         </section>
-
         <section id="Langland">
-  <h2>Langland Studio介绍</h2>
-  <p> Langland Studio</p>
-</section>
-
+          <h2>Langland Studio介绍</h2>
+          <p> Langland Studio</p>
+        </section>
       </main>
       <footer>
         Created by Peter | Langland Studio
       </footer>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
