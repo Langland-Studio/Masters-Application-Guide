@@ -26,8 +26,8 @@ header {
 
 header h1, 
 header h2 {
-  text-align: center;   /* keep headings centered */
-  margin: 0;            /* remove default margins for tighter look */
+  text-align: center;
+  margin: 0;
 }
 
 header p {
@@ -68,8 +68,9 @@ footer {
   font-size: 0.9em;
 }
 
+/* Timeline container */
 .timeline-container {
-  display: flex;
+  display: inline-flex; /* shrink to match items */
   align-items: flex-start;
   overflow-x: auto; /* allow scrolling if too wide */
   padding: 2rem 0;
@@ -79,7 +80,7 @@ footer {
 }
 
 .timeline-container::-webkit-scrollbar {
-  height: 8px; /* smaller scrollbar height */
+  height: 8px;
 }
 
 .timeline-container::-webkit-scrollbar-thumb {
@@ -91,10 +92,10 @@ footer {
   content: "";
   position: absolute;
   top: 60px;
-  left: 0;
+  left: 10px; /* align with first dot */
   height: 4px;
   background: #4169e1;
-  width: 100%; /* full width of container */
+  width: calc(100% - 20px); /* end near last dot */
   z-index: 0;
 }
 
@@ -103,7 +104,7 @@ footer {
   text-align: center;
   position: relative;
   z-index: 1;
-  scroll-snap-align: start; /* snap to start of item (optional) */
+  scroll-snap-align: start;
 }
 
 .timeline-item::before {
@@ -118,7 +119,6 @@ footer {
   top: 50px;
   z-index: 2;
 }
-
 
 .timeline-content {
   background: #f5f6fb;
