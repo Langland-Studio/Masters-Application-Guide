@@ -43,9 +43,9 @@ main {
 
 /* Sections in the main content */
 section {
-  margin-bottom: 1.5em;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1em;
+  margin-bottom: 3em;
+  padding-bottom: 0;
+  border: none;
 }
 
 h2 {
@@ -74,6 +74,7 @@ footer {
   overflow-x: auto;
   padding: 2rem 0;
   position: relative;
+  min-width: max-content;
 }
 
 .timeline-container::before {
@@ -85,6 +86,8 @@ footer {
   height: 4px;
   background: #4169e1;
   z-index: 0;
+  width: 100%;
+  min-width: 100%; /
 }
 
 .timeline-item {
