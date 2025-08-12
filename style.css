@@ -82,12 +82,11 @@ footer {
   position: absolute;
   top: 60px;
   left: 0;
-  width: 100%;
   height: 4px;
   background: #4169e1;
   z-index: 0;
-  width: 100%;
-  min-width: 100%; /
+  min-width: 100%; /* 确保至少和容器一样宽 */
+  width: calc(200px * 6); /* 200px 是每个事件的宽度，6 是事件个数 */
 }
 
 .timeline-item {
