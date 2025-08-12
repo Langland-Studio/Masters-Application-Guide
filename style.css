@@ -68,13 +68,23 @@ footer {
   font-size: 0.9em;
 }
 
-.timeline-container {
+..timeline-container {
   display: flex;
   align-items: flex-start;
-  overflow-x: auto;
+  overflow-x: auto; /* allow scrolling if too wide */
   padding: 2rem 0;
   position: relative;
-  min-width: max-content;
+  gap: 2rem; /* space between items */
+  scroll-snap-type: x mandatory; /* smooth snap on scroll (optional) */
+}
+
+.timeline-container::-webkit-scrollbar {
+  height: 8px; /* smaller scrollbar height */
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
 }
 
 .timeline-container::before {
@@ -84,17 +94,16 @@ footer {
   left: 0;
   height: 4px;
   background: #4169e1;
+  width: 100%; /* full width of container */
   z-index: 0;
-  min-width: 100%; /* 确保至少和容器一样宽 */
-  width: calc(200px * 6); /* 200px 是每个事件的宽度，6 是事件个数 */
 }
 
 .timeline-item {
-  flex: 0 0 auto;
-  width: 200px;
+  flex: 0 0 200px; /* fixed item width */
   text-align: center;
   position: relative;
   z-index: 1;
+  scroll-snap-align: start; /* snap to start of item (optional) */
 }
 
 .timeline-item::before {
@@ -109,6 +118,7 @@ footer {
   top: 50px;
   z-index: 2;
 }
+
 
 .timeline-content {
   background: #f5f6fb;
@@ -128,4 +138,63 @@ footer {
 .timeline-content p {
   margin: 0;
   font-size: 0.95rem;
+}
+
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4169e1;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+  }
+
+  .sidebar h1 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide menu by default on mobile */
+  .sidebar-nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: #fff;
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  /* Show menu when active */
+  .sidebar-nav.active {
+    display: flex;
+  }
+
+  .sidebar-nav a {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f9f9f9;
+  }
 }
