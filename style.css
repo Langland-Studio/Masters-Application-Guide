@@ -68,7 +68,7 @@ footer {
   font-size: 0.9em;
 }
 
-..timeline-container {
+.timeline-container {
   display: flex;
   align-items: flex-start;
   overflow-x: auto; /* allow scrolling if too wide */
