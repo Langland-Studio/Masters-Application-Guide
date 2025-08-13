@@ -6,9 +6,10 @@ body {
 }
 
 /* Top header section */
+/* Header container */
 header {
-  background: #393e41;
-  color: #fff;
+  background: #393e41; /* background colour */
+  color: #fff; /* default text colour for all inside header */
   padding: 2.7rem 2.5rem 2rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -17,15 +18,27 @@ header {
   text-align: center;
 }
 
-header h1, header h2 {
+/* Main title (h1) */
+header h1 {
   margin: 0;
+  font-size: 3rem;   /* change size */
+  color: #1965c8;    /* change colour */
 }
 
+/* Subtitle (h2) */
+header h2 {
+  margin: 0;
+  font-size: 1.8rem; /* change size */
+  color: #87ceeb;    /* change colour */
+}
+
+/* Optional paragraph style */
 header p {
   margin: 0;
   font-size: 1.1rem;
   color: #e0e0e0;
 }
+
 
 .container {
   display: flex;
