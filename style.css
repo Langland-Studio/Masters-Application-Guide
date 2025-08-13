@@ -19,17 +19,10 @@ header {
 }
 
 /* Main title (h1) */
-header h1 {
+header h2 {
   margin: 0;
   font-size: 3rem;   /* change size */
   color: #1965c8;    /* change colour */
-}
-
-/* Subtitle (h2) */
-header h2 {
-  margin: 0;
-  font-size: 1.8rem; /* change size */
-  color: #87ceeb;    /* change colour */
 }
 
 /* Optional paragraph style */
