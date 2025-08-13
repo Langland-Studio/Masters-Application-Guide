@@ -18,10 +18,10 @@ header {
   text-align: center;
 }
 
-/* Main title (h1) */
+/* Main title (h2) */
 header h2 {
   margin: 0;
-  font-size: 3rem;   /* change size */
+  font-size: 2rem;   /* change size */
   color: #1965c8;    /* change colour */
 }
 
