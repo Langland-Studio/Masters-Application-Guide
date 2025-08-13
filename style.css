@@ -25,6 +25,12 @@ header h2 {
   color: #1965c8;    /* change colour */
 }
 
+@media (max-width: 768px) { 
+  header h2 {
+    font-size: 1.8rem; 
+  }
+}
+
 /* Optional paragraph style */
 header p {
   margin: 0;
