@@ -292,3 +292,34 @@ footer {
     background: #f9f9f9;
   }
 }
+
+/* Summary box styling to make it stand out */
+.summary-box {
+  background-color: #e6f7ff; /* A light, noticeable background color */
+  border: 2px solid #91d5ff; /* A blue border to match the theme */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  padding: 1rem; /* Some internal spacing */
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow to give it depth */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.summary-box:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* A slightly more pronounced shadow on hover */
+  transform: translateY(-2px); /* Lifts the box slightly on hover */
+}
+
+/* Style the summary text itself */
+.summary-box summary {
+  font-size: 1.1rem; /* Make the text slightly larger */
+  font-weight: bold; /* Make the text bold */
+  color: #0050b3; /* A dark blue color for better visibility */
+  cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
+  padding: 0.5rem; /* Add padding around the text */
+  list-style: none; /* Removes the default arrow icon */
+}
+
+/* Style the content inside the details tag */
+.summary-box details {
+  padding-top: 1rem; /* Add some space between the summary and the content */
+}
