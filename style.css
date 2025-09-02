@@ -318,8 +318,3 @@ footer {
   padding: 0.5rem; /* Add padding around the text */
   list-style: none; /* Removes the default arrow icon */
 }
-
-/* Style the content inside the details tag */
-.summary-box details {
-  padding-top: 1rem; /* Add some space between the summary and the content */
-}
