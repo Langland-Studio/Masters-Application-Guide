@@ -31,6 +31,14 @@ header h2 {
   }
 }
 
+h3 {
+  color: #4169e1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
 /* Optional paragraph style */
 header p {
   margin: 0;
@@ -317,4 +325,12 @@ footer {
   cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
   padding: 0.5rem; /* Add padding around the text */
   list-style: none; /* Removes the default arrow icon */
+}
+
+.contact-information {
+  background: #f5f6fb;
+  border-left: 4px solid #4169e1;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
 }
