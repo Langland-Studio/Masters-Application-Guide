@@ -1,64 +1,46 @@
+:root {
+  --bg: #f2f4f8;
+  --panel: #ffffff;
+  --ink: #1f2430;
+  --muted: #5a6378;
+  --primary: #4169e1;
+  --primary-deep: #3153bb;
+  --header-bg: #393e41;
+  --line: #dbe1ef;
+  --shadow-soft: 0 8px 26px rgba(43, 65, 112, 0.08);
+  --shadow-hover: 0 14px 30px rgba(43, 65, 112, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f8f9fa;
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.75;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(65, 105, 225, 0.12), transparent 34%),
+    radial-gradient(circle at 85% 5%, rgba(57, 62, 65, 0.1), transparent 28%),
+    var(--bg);
 }
-
-/* Top header section */
-/* Header container */
-header {
-  background: #393e41; /* background colour */
-  color: #fff; /* default text colour for all inside header */
-  padding: 2.7rem 2.5rem 2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Main title (h2) */
-header h2 {
-  margin: 0;
-  font-size: 2rem;   /* change size */
-  color: #1965c8;    /* change colour */
-}
-
-@media (max-width: 768px) { 
-  header h2 {
-    font-size: 1.8rem; 
-  }
-}
-
-h3 {
-  color: #4169e1;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.8rem;
-}
-
-/* Optional paragraph style */
-header p {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #e0e0e0;
-}
-
 
 .container {
   display: flex;
   min-height: 100vh;
 }
 
-/* Sidebar for desktop */
 .sidebar {
-  width: 230px;
-  background: #fff;
-  border-right: 1px solid #e0e0e0;
-  padding: 2.5rem 1.5rem 2rem 1.5rem;
-  box-sizing: border-box;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-right: 1px solid var(--line);
+  padding: 2rem 1.3rem;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -68,105 +50,185 @@ header p {
 }
 
 .sidebar h1 {
-  font-size: 1.35rem;
-  margin-bottom: 2.5rem;
-  font-weight: 700;
-  color: #4169e1;
+  font-size: 1.4rem;
+  margin: 0 0 1.4rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  border: 1px solid rgba(65, 105, 225, 0.28);
+  border-radius: 10px;
+  width: 42px;
+  height: 38px;
+  background: #eef2ff;
+  color: var(--primary);
+  cursor: pointer;
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 0.5rem;
   width: 100%;
 }
 
 .sidebar-nav a {
-  color: #4169e1;
+  color: var(--primary-deep);
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 0.2em 0.2em 0.2em 0;
-  border-radius: 4px;
-  transition: background 0.18s;
+  font-size: 0.98rem;
+  font-weight: 620;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
+
 .sidebar-nav a:hover,
 .sidebar-nav a.active {
-  background: #f2f3ff;
-  color: #263238;
+  background: #e9eeff;
+  color: #1a2f7a;
+  transform: translateX(2px);
 }
 
-/* Hamburger menu: hidden on desktop */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #4169e1;
-}
-
-/* Main content */
 .main-content {
   flex: 1;
   min-width: 0;
 }
 
+header {
+  margin: 1.1rem 1.1rem 0;
+  border-radius: 18px;
+  background:
+    linear-gradient(130deg, rgba(57, 62, 65, 0.98) 10%, rgba(57, 62, 65, 0.92) 60%, rgba(65, 105, 225, 0.9) 100%);
+  color: #fff;
+  padding: 2.3rem 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+header h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.8vw, 2.25rem);
+  color: #8bb2ff;
+  letter-spacing: 0.03em;
+}
+
+header p {
+  margin: 0.45rem 0 0;
+  font-size: 1.04rem;
+  color: #e8edf8;
+}
+
 main {
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 2.3rem 2.5rem 2.5rem 2.5rem;
-  background: none;
+  padding: 1.4rem 1.1rem 2.4rem;
 }
 
 section {
-  margin-bottom: 2.7rem;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0;
+  margin: 0 0 1.1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  padding: 1.4rem 1.5rem;
+  animation: section-fade 0.55s ease both;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+section:nth-of-type(2) {
+  animation-delay: 0.06s;
+}
+
+section:nth-of-type(3) {
+  animation-delay: 0.12s;
+}
+
+section:nth-of-type(4) {
+  animation-delay: 0.16s;
 }
 
 h2 {
-  color: #4169e1;
-  font-size: 1.45rem;
+  color: var(--primary);
+  font-size: 1.42rem;
+  font-weight: 760;
+  margin: 0 0 0.82rem;
+}
+
+h3 {
+  color: var(--primary);
+  font-size: 1.12rem;
+  margin: 1.2rem 0 0.56rem;
   font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 1rem;
 }
 
-footer {
-  background: #e9eaec;
-  color: #222;
-  text-align: center;
-  padding: 1.2rem 0;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-  clear: both;
+p {
+  margin: 0.55rem 0;
 }
 
-/* -------- Vertical Timeline Styles -------- */
+a {
+  color: var(--primary-deep);
+}
+
+a:hover {
+  color: #1d3ea0;
+}
+
+.summary-box {
+  margin-top: 0.8rem;
+  padding: 0.72rem 0.9rem;
+  border: 1px dashed #bfd0f8;
+  border-radius: 12px;
+  background: #f8faff;
+}
+
+.summary-box summary {
+  cursor: pointer;
+  color: var(--primary-deep);
+  font-weight: 700;
+}
+
+.contact-information {
+  margin-top: 0.9rem;
+  border-left: 4px solid var(--primary);
+  padding: 0.4rem 0.9rem;
+  background: #f5f8ff;
+  border-radius: 0 10px 10px 0;
+}
+
 .vertical-timeline {
   position: relative;
-  margin: 2rem auto;
-  padding: 2rem 0;
-  max-width: 600px;
+  margin: 1.2rem auto 0.6rem;
+  padding: 1rem 0;
+  max-width: 640px;
 }
 
 .vertical-timeline::before {
   content: "";
   position: absolute;
-  left: 30px;
-  top: 0;
+  left: 28px;
+  top: 2px;
   width: 4px;
-  height: 100%;
-  background: #4169e1;
-  border-radius: 2px;
+  height: calc(100% - 8px);
+  background: linear-gradient(var(--primary), #88a2ef);
+  border-radius: 3px;
 }
 
 .vt-item {
   position: relative;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.6rem;
   min-height: 50px;
 }
 
@@ -177,161 +239,161 @@ footer {
 .vt-item::before {
   content: "";
   position: absolute;
-  left: 22px;
-  top: 0.4em;
-  width: 18px;
-  height: 18px;
+  left: 19px;
+  top: 0.36rem;
+  width: 20px;
+  height: 20px;
   background: #fff;
-  border: 4px solid #4169e1;
+  border: 4px solid var(--primary);
   border-radius: 50%;
   z-index: 1;
 }
 
 .vt-content {
-  margin-left: 60px;
-  background: #f5f6fb;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1rem 1.2rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-  position: relative;
+  margin-left: 58px;
+  background: #f8faff;
+  border: 1px solid #d9e2fa;
+  border-radius: 12px;
+  padding: 0.95rem 1.1rem;
+  box-shadow: 0 4px 12px rgba(42, 68, 140, 0.08);
 }
 
 .vt-content h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  color: #4169e1;
+  margin: 0 0 0.4rem;
+  font-size: 1.03rem;
 }
 
 .vt-content p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
+  color: #384255;
 }
 
-/* Mobile responsive: make timeline full width, shrink left margin */
-@media (max-width: 600px) {
+footer {
+  margin: 0 1.1rem 1.1rem;
+  background: #e8ebf2;
+  border: 1px solid #d4dae8;
+  border-radius: 12px;
+  color: #364056;
+  text-align: center;
+  padding: 0.95rem 0.8rem;
+  font-size: 0.93rem;
+  letter-spacing: 0.03em;
+}
+
+@keyframes section-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0.9rem;
+    box-shadow: 0 6px 18px rgba(20, 28, 48, 0.08);
+  }
+
+  .sidebar h1 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0.7rem 0.8rem 0.8rem;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 20px rgba(20, 28, 48, 0.12);
+    gap: 0.25rem;
+  }
+
+  .sidebar-nav.active {
+    display: flex;
+  }
+
+  header,
+  main,
+  footer {
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+  }
+
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  section {
+    padding: 1.2rem 1rem;
+  }
+
   .vertical-timeline {
     max-width: 100%;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.1rem;
   }
+
   .vertical-timeline::before {
     left: 18px;
   }
+
   .vt-content {
-    margin-left: 45px;
-    padding: 0.7rem 1rem;
+    margin-left: 43px;
+    padding: 0.72rem 0.85rem;
   }
+
   .vt-item::before {
-    left: 10px;
+    left: 9px;
     width: 14px;
     height: 14px;
     border-width: 3px;
   }
 }
 
-/* -------- Sidebar Responsive Styles -------- */
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem 1rem 1rem 1rem;
-    gap: 2rem;
-  }
-  .sidebar h1 {
-    margin-bottom: 0;
-    margin-right: 2rem;
-  }
-  .sidebar-nav {
-    flex-direction: row;
-    gap: 2rem;
-  }
-  .main-content header, main {
-    padding: 1.2rem;
-  }
-}
-
-/* Hamburger only on mobile (<600px) */
 @media (max-width: 600px) {
-  .sidebar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.8rem 1rem;
+  header {
+    padding: 1.8rem 1.05rem 1.4rem;
   }
-  .sidebar h1 {
-    font-size: 1.2rem;
-    margin: 0;
-  }
-  /* Show hamburger icon */
-  .menu-toggle {
-    display: block;
-  }
-  /* Hide menu by default on mobile */
-  .sidebar-nav {
-    display: none;
-    flex-direction: column;
-    gap: 0.8rem;
-    background: #fff;
-    position: absolute;
-    top: 3.5rem;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    border-top: 1px solid #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 999;
-  }
-  /* Show menu when active */
-  .sidebar-nav.active {
-    display: flex;
-  }
-  .sidebar-nav a {
-    padding: 0.6rem;
-    font-size: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    background: #f9f9f9;
-  }
-}
 
-/* Summary box styling to make it stand out */
-.summary-box {
-  background-color: #e6f7ff; /* A light, noticeable background color */
-  border: 2px solid #91d5ff; /* A blue border to match the theme */
-  border-radius: 8px; /* Rounded corners for a modern look */
-  padding: 1rem; /* Some internal spacing */
-  margin-top: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow to give it depth */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-}
+  header p {
+    font-size: 0.96rem;
+  }
 
-.summary-box:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* A slightly more pronounced shadow on hover */
-  transform: translateY(-2px); /* Lifts the box slightly on hover */
-}
+  h2 {
+    font-size: 1.26rem;
+  }
 
-/* Style the summary text itself */
-.summary-box summary {
-  font-size: 1.1rem; /* Make the text slightly larger */
-  font-weight: bold; /* Make the text bold */
-  color: #0050b3; /* A dark blue color for better visibility */
-  cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
-  padding: 0.5rem; /* Add padding around the text */
-  list-style: none; /* Removes the default arrow icon */
-}
-
-.contact-information {
-  background: #f5f6fb;
-  border-left: 4px solid #4169e1;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 4px;
+  p,
+  .vt-content p {
+    font-size: 0.94rem;
+  }
 }
